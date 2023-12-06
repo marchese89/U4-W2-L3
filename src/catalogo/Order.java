@@ -1,6 +1,7 @@
 package catalogo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
@@ -8,7 +9,7 @@ public class Order {
     private String status;
     private LocalDate orderDate;
     private LocalDate deliveryDate;
-    private List<Product> products;
+    private List<Product> products = new ArrayList<>();
     private Customer customer;
 
     public Long getId() {
@@ -57,5 +58,16 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "status='" + status + '\'' +
+                ", orderDate=" + orderDate +
+                ", deliveryDate=" + deliveryDate +
+                ", products=" + products +
+                ", customer=" + customer +
+                '}';
     }
 }
