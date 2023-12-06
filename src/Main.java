@@ -17,12 +17,25 @@ public class Main {
         cust1.setTier(2);
         Product p1 = new Product();
         p1.setName("Prodotto1");
-        p1.setPrice(10.00);
+        p1.setPrice(101.00);
         p1.setCategory("Books");
+
+        Product p2 = new Product();
+        p2.setName("Prodotto2");
+        p2.setPrice(11.00);
+        p2.setCategory("Baby");
+
+        Product p3 = new Product();
+        p3.setName("Prodotto3");
+        p3.setPrice(10.00);
+        p3.setCategory("Boys");
+
         o1.setCustomer(cust1);
 
         o1.setCustomer(cust1);
         o1.getProducts().add(p1);
+        o1.getProducts().add(p2);
+        o1.getProducts().add(p3);
         o1.setOrderDate(LocalDate.of(2021,2,1));
 
         System.out.println("-------------------------------- EX1 --------------------------------");
@@ -60,6 +73,6 @@ public class Main {
 
         List<Product> l3 = listaOrdini.stream().filter(tier2.and(feb21Apr21)).flatMap(order -> order.getProducts().stream()).toList();
 
-        System.out.println(listaOrdini);
+        System.out.println(l3);
     }
 }
